@@ -138,3 +138,307 @@
   background: rgba(255, 255, 255, 0.6);
   filter: blur(300px);
 }
+
+/* ---------- HERO ANIMATIONS ---------- */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ---------- HERO ANIMATIONS ---------- */
+
+.hero-reveal {
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.hero-delay-1 { animation-delay: 0.1s; }
+.hero-delay-2 { animation-delay: 0.2s; }
+.hero-delay-3 { animation-delay: 0.3s; }
+.hero-delay-4 { animation-delay: 0.4s; }
+.hero-delay-5 { animation-delay: 0.5s; }
+.hero-delay-6 { animation-delay: 0.6s; }
+.hero-delay-7 { animation-delay: 0.7s; }
+
+.hero-image-reveal {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.3s forwards;
+}
+
+.hero-image-float {
+  animation: float 5s ease-in-out 1.3s infinite;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ===== PORTFOLIO SPACE BACKGROUND ===== */
+
+.portfolio-space {
+  position: relative;
+  isolation: isolate;
+  background-color: #070817;
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.8), transparent 2px),
+    radial-gradient(1px 1px at 100px 80px, rgba(160,150,255,0.8), transparent 2px),
+    radial-gradient(2px 2px at 180px 140px, rgba(255,255,255,0.7), transparent 3px),
+    radial-gradient(1px 1px at 250px 40px, rgba(120,160,255,0.8), transparent 2px),
+    radial-gradient(ellipse at 15% 20%, rgba(65,45,150,0.22), transparent 45%),
+    radial-gradient(ellipse at 85% 65%, rgba(30,65,150,0.18), transparent 45%);
+  background-size: 300px 220px, 260px 200px, 340px 280px, 280px 240px, 100% 100%, 100% 100%;
+  animation: spaceBackground 18s ease-in-out infinite alternate;
+}
+
+@keyframes spaceBackground {
+  from {
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  to {
+    background-position: 40px 25px, -30px 35px, 25px -20px, -20px -25px, 0 0, 0 0;
+  }
+}
+
+/* ===== PURPLE PORTFOLIO THEME ===== */
+
+.portfolio-gradient-text {
+  background: linear-gradient(100deg, #c4a5ff 0%, #8b7bff 45%, #55a7ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.portfolio-reveal {
+  animation: portfolioFadeUp 1s ease-out both;
+}
+
+.portfolio-image-reveal {
+  animation: portfolioFadeIn 1.2s ease-out 0.2s both;
+}
+
+.portfolio-float {
+  animation: portfolioFloat 5s ease-in-out infinite;
+}
+
+.portfolio-orbit {
+  animation: portfolioRotate 30s linear infinite;
+}
+
+@keyframes portfolioFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes portfolioFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(35px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes portfolioFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes portfolioRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-reveal,
+  .portfolio-image-reveal,
+  .portfolio-float,
+  .portfolio-orbit {
+    animation: none;
+  }
+}
+
+/* ===== SKILLS DASHBOARD ANIMATIONS ===== */
+
+.skills-dashboard-reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.skills-dashboard-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-dashboard-card {
+  opacity: 0;
+  animation: skillCardEnter 0.6s ease forwards;
+  transition: transform 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.skill-dashboard-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(167, 139, 250, 0.65);
+  box-shadow: 0 15px 35px rgba(109, 40, 217, 0.16);
+}
+
+@keyframes skillCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-dashboard-reveal,
+  .skill-dashboard-card {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ===== FEATURED PROJECT ANIMATIONS ===== */
+
+.project-reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.project-reveal.project-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card {
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-9px);
+  border-color: rgba(167, 139, 250, 0.65);
+  box-shadow: 0 20px 55px rgba(109, 40, 217, 0.16);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.07);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .project-image {
+    transition: none;
+  }
+}
+
+/* ===== ABOUT SECTION ANIMATIONS ===== */
+
+.about-reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.about-reveal.about-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+.portfolio-gradient-text {
+  background: linear-gradient(90deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
